@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import "./App.css";
+import styled from "styled-components";
 
 function App() {
   const labelNome = useRef("");
@@ -21,29 +22,34 @@ function App() {
     inputNome.current.focus();
   };
 
+  const StyledLabelInput = styled.div`
+    display: block;
+    margin: 10px 0;
+  `;
+
   return (
     <>
       <form className="formulario" onSubmit={enviarFormulario}>
         <h2>Formulário</h2>
         <p>Preencha os campos abaixo:</p>
-        <label ref={labelNome}>
-          Nome:
+        <StyledLabelInput>
+          <label ref={labelNome}>Nome:</label>
           <input
             type="text"
             name="nome"
             ref={inputNome}
             placeholder="Digite seu nome"
           />
-        </label>
-        <label ref={labelEmail}>
-          E-mail:
+        </StyledLabelInput>
+        <StyledLabelInput>
+          <label ref={labelEmail}>E-mail:</label>
           <input
             type="email"
             name="email"
             ref={inputEmail}
             placeholder="Digite seu e-mail"
           />
-        </label>
+        </StyledLabelInput>
         <button type="submit">Salvar</button>
       </form>
     </>
