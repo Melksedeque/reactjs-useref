@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -6,6 +6,12 @@ function App() {
   const inputNome = useRef("");
   const labelEmail = useRef("");
   const inputEmail = useRef("");
+
+  useEffect(() => {
+    labelNome.current.innerHTML = "Nome do usuário:";
+    labelNome.current.style.fontStyle = "italic";
+    labelNome.current.style.color = "red";
+  }, []);
 
   return (
     <>
