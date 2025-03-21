@@ -13,9 +13,17 @@ function App() {
     labelNome.current.style.color = "red";
   }, []);
 
+  const enviarFormulario = (event) => {
+    event.preventDefault();
+    const nome = event.target.nome.value;
+    const email = event.target.email.value;
+    alert(`Nome: ${nome} - E-mail: ${email}`);
+    inputNome.current.focus();
+  };
+
   return (
     <>
-      <form className="formulario">
+      <form className="formulario" onSubmit={enviarFormulario}>
         <h2>Formulário</h2>
         <p>Preencha os campos abaixo:</p>
         <label ref={labelNome}>
