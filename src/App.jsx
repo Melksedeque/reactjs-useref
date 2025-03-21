@@ -12,13 +12,16 @@ function App() {
     labelNome.current.innerHTML = "Nome do usuário:";
     labelNome.current.style.fontStyle = "italic";
     labelNome.current.style.color = "red";
+    labelEmail.current.innerHTML = "E-mail do usuário:";
+    labelEmail.current.style.fontStyle = "bold";
+    labelEmail.current.style.color = "blue";
   }, []);
 
   const enviarFormulario = (event) => {
     event.preventDefault();
-    const nome = event.target.nome.value;
-    const email = event.target.email.value;
-    alert(`Nome: ${nome} - E-mail: ${email}`);
+    // const nome = event.target.nome.value;
+    // const email = event.target.email.value;
+    // alert(`Nome: ${nome} - E-mail: ${email}`);
     inputNome.current.focus();
   };
 
@@ -50,7 +53,7 @@ function App() {
             placeholder="Digite seu e-mail"
           />
         </StyledLabelInput>
-        <button type="submit">Salvar</button>
+        <button>Salvar</button>
       </form>
     </>
   );
